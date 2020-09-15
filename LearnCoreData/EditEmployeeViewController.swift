@@ -23,11 +23,11 @@ class EditEmployeeViewController: UIViewController {
     
 
     @IBAction func didTapBack(_ sender: Any) {
-        popSelf()
+        closeSelf()
     }
     
-    private func popSelf() {
-        self.navigationController?.popViewController(animated: true)
+    private func closeSelf() {
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func didTapSave(_ sender: Any) {
@@ -39,7 +39,7 @@ class EditEmployeeViewController: UIViewController {
         employeeEntity.age = Int16(tfAge.text ?? "") ?? 0
         do {
             try coreDataManager.mainContext?.save()
-            popSelf()
+            closeSelf()
         }
         catch {
             print("Error saving managed object context.")

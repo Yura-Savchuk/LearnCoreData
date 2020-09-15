@@ -7,39 +7,27 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Emloyee Info-->
         <scene sceneID="8bw-vo-65y">
             <objects>
                 <viewController id="1zt-I8-rM5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gk3-gD-8da">
                         <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soq-s1-8A2">
-                                <rect key="frame" x="0.0" y="0.0" width="703.5" height="50"/>
-                                <items>
-                                    <navigationItem title="Employees" id="duA-EM-2Gc">
-                                        <barButtonItem key="rightBarButtonItem" title="New employee" id="b54-vh-0U9">
-                                            <connections>
-                                                <segue destination="EDD-vM-AFL" kind="show" id="jY2-47-Yr5"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="soq-s1-8A2" firstAttribute="top" secondItem="Y7a-S4-v7q" secondAttribute="top" id="BCW-Sp-l2L"/>
-                            <constraint firstItem="Y7a-S4-v7q" firstAttribute="trailing" secondItem="soq-s1-8A2" secondAttribute="trailing" id="GcQ-3M-26E"/>
-                            <constraint firstItem="soq-s1-8A2" firstAttribute="leading" secondItem="Y7a-S4-v7q" secondAttribute="leading" id="lxB-hT-Fxb"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Y7a-S4-v7q"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Emloyee Info" id="IRQ-d1-x7E">
+                        <barButtonItem key="rightBarButtonItem" title="New employee" id="b54-vh-0U9">
+                            <connections>
+                                <segue destination="EDD-vM-AFL" kind="show" id="jY2-47-Yr5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TtT-ra-d1u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-246" y="488"/>
+            <point key="canvasLocation" x="500.97656249999994" y="850.78125"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="cft-Wz-Cx6">
@@ -95,23 +83,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9M-ed-84f">
-                                <rect key="frame" x="0.0" y="0.0" width="703.5" height="50"/>
-                                <items>
-                                    <navigationItem title="Title" id="A1X-VZ-oiK">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="DKc-Zr-hmp">
-                                            <connections>
-                                                <action selector="didTapBack:" destination="EDD-vM-AFL" id="Daz-bF-mEi"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="FN2-ZQ-fgG">
-                                            <connections>
-                                                <action selector="didTapSave:" destination="EDD-vM-AFL" id="cAm-Tq-FYv"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVX-RH-vbd">
                                 <rect key="frame" x="0.0" y="50" width="703.5" height="718"/>
                                 <subviews>
@@ -154,17 +125,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="J9M-ed-84f" firstAttribute="leading" secondItem="2Z5-26-H5k" secondAttribute="leading" id="7Wp-Zd-5eY"/>
-                            <constraint firstItem="J9M-ed-84f" firstAttribute="top" secondItem="Tah-Md-VDH" secondAttribute="top" id="9yQ-8z-Qk8"/>
-                            <constraint firstItem="UVX-RH-vbd" firstAttribute="top" secondItem="J9M-ed-84f" secondAttribute="bottom" id="Dy5-wV-HXR"/>
                             <constraint firstItem="UVX-RH-vbd" firstAttribute="leading" secondItem="Tah-Md-VDH" secondAttribute="leading" id="FON-9S-TGw"/>
-                            <constraint firstItem="Tah-Md-VDH" firstAttribute="trailing" secondItem="J9M-ed-84f" secondAttribute="trailing" id="iy7-NP-oYz"/>
+                            <constraint firstItem="UVX-RH-vbd" firstAttribute="top" secondItem="Tah-Md-VDH" secondAttribute="top" id="LxT-y8-UG8"/>
                             <constraint firstAttribute="trailing" secondItem="UVX-RH-vbd" secondAttribute="trailing" id="pBh-G6-vQG"/>
                             <constraint firstItem="UVX-RH-vbd" firstAttribute="bottom" secondItem="Tah-Md-VDH" secondAttribute="bottom" id="qnu-rl-TDE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tah-Md-VDH"/>
                     </view>
-                    <navigationItem key="navigationItem" id="IVs-F4-ej9"/>
+                    <navigationItem key="navigationItem" id="IVs-F4-ej9">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="FN2-ZQ-fgG">
+                            <connections>
+                                <action selector="didTapSave:" destination="EDD-vM-AFL" id="cAm-Tq-FYv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tfAge" destination="QId-QL-JuL" id="aPe-gS-h66"/>
                         <outlet property="tfFirstName" destination="OHW-PA-qJ8" id="3ms-Zx-dmT"/>
@@ -174,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uwn-qt-Fjw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="482.81249999999994" y="487.5"/>
+            <point key="canvasLocation" x="1199" y="851"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sHc-fp-nvK">
@@ -198,12 +172,30 @@
                 <splitViewController id="y3I-JM-DEM" sceneMemberID="viewController">
                     <connections>
                         <segue destination="2uN-Ta-ftc" kind="relationship" relationship="masterViewController" id="uDs-UQ-22z"/>
-                        <segue destination="1zt-I8-rM5" kind="relationship" relationship="detailViewController" id="3b9-ze-gZA"/>
+                        <segue destination="vH2-Bi-OLf" kind="relationship" relationship="detailViewController" id="3b9-ze-gZA"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Onp-A7-Upj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-772" y="-316"/>
+            <point key="canvasLocation" x="-991" y="-113"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Czg-IJ-9ec">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vH2-Bi-OLf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fjI-2j-sEr">
+                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1zt-I8-rM5" kind="relationship" relationship="rootViewController" id="y8P-OK-qNU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9DC-xY-Nj0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-223.24218749999997" y="850.78125"/>
         </scene>
     </scenes>
 </document>

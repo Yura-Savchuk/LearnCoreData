@@ -11,8 +11,8 @@ import CoreData
 
 class EmployeesViewController: UITableViewController {
     
-    var employees: [EmployeeEntity] = []
-    let coreDataManager = CoreDataManager(modelName: "LearnCoreData")
+    private var employees: [EmployeeEntity] = []
+    private let coreDataManager = CoreDataManager(modelName: "LearnCoreData")
     
     override func viewDidLoad() {
         super.viewDidLoad()
