@@ -14,6 +14,12 @@ class EditEmployeeViewController: UIViewController {
     @IBOutlet weak var tfLastName: UITextField!
     @IBOutlet weak var tfMiddleName: UITextField!
     @IBOutlet weak var tfAge: UITextField!
+    @IBOutlet weak var tfCity: UITextField!
+    @IBOutlet weak var tfStreet: UITextField!
+    @IBOutlet weak var tfPostalCode: UITextField!
+    @IBOutlet weak var btnJob: UIButton!
+    
+    private var selectedJob: JobEntity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +43,15 @@ class EditEmployeeViewController: UIViewController {
         employeeEntity.lastName = tfLastName.text
         employeeEntity.middleName = tfMiddleName.text
         employeeEntity.age = Int16(tfAge.text ?? "") ?? 0
+        
+        let address = AddressEntity(context: coreDataManager.mainContext!)
+        address.city = tfCity.text
+        address.street = tfStreet.text
+        address.postalCode = tfPostalCode.text
+        employeeEntity.address = address
+        
+        employeeEntity.jobId = selectedJob?.id
+        
         do {
             try coreDataManager.mainContext?.save()
             closeSelf()
@@ -45,5 +60,9 @@ class EditEmployeeViewController: UIViewController {
             print("Error saving managed object context.")
         }
     }
-
+    
+    @IBAction func didTapJobButton(_ sender: Any) {
+        
+    }
+    
 }

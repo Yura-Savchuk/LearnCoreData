@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Address" representedClassName="AddressEntity" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="postalCode" optional="YES" attributeType="String"/>
+        <attribute name="street" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Employee" representedClassName="EmployeeEntity" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="jobId" optional="YES" attributeType="String"/>
         <attribute name="lastName" optional="YES" attributeType="String"/>
         <attribute name="middleName" optional="YES" attributeType="String"/>
+        <relationship name="address" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Address"/>
+        <fetchedProperty name="job" optional="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Job" predicateString="jobId==$FETCH_SOURCE.id"/>
+        </fetchedProperty>
+    </entity>
+    <entity name="Job" representedClassName="JobEntity" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="salary" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Employee" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Employee" positionX="-63" positionY="-18" width="128" height="161"/>
+        <element name="Address" positionX="-63" positionY="9" width="128" height="88"/>
+        <element name="Job" positionX="-45" positionY="36" width="128" height="88"/>
     </elements>
 </model>

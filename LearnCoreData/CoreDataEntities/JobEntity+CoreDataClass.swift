@@ -1,5 +1,5 @@
 //
-//  EmployeeEntity+CoreDataClass.swift
+//  JobEntity+CoreDataClass.swift
 //  LearnCoreData
 //
 //  Created by Yura Savchuk on 28.09.2020.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(EmployeeEntity)
-public class EmployeeEntity: NSManagedObject {
+@objc(JobEntity)
+public class JobEntity: NSManagedObject {
 
 }
