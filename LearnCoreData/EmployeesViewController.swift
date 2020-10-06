@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import NotificationCenter
 
 class EmployeesViewController: UITableViewController {
     
@@ -17,6 +18,7 @@ class EmployeesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         employees = fetchAllEmployees()
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView), name: Notification.Name("EmployeeSaved"), object: nil)
     }
     
     private func fetchAllEmployees() -> [EmployeeEntity] {
@@ -28,6 +30,11 @@ class EmployeesViewController: UITableViewController {
             print("Fetch employees error \(error.localizedDescription)")
             return []
         }
+    }
+    
+    @objc private func refreshTableView() {
+        employees = fetchAllEmployees()
+        tableView.reloadData()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

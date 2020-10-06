@@ -2,7 +2,7 @@
 //  EmployeeEntity+CoreDataProperties.swift
 //  LearnCoreData
 //
-//  Created by Yura Savchuk on 28.09.2020.
+//  Created by MultisAudios on 06.10.2020.
 //  Copyright © 2020 Yura Savchuk. All rights reserved.
 //
 //
@@ -19,9 +19,11 @@ extension EmployeeEntity {
 
     @NSManaged public var age: Int16
     @NSManaged public var firstName: String?
+    @NSManaged public var isOnApprobation: Bool
+    @NSManaged public var jobId: String?
     @NSManaged public var lastName: String?
     @NSManaged public var middleName: String?
-    @NSManaged public var jobId: String?
+    @NSManaged public var startDate: Date?
     @NSManaged public var address: AddressEntity?
 
 }

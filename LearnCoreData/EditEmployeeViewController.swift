@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationCenter
 
 class EditEmployeeViewController: UIViewController {
 
@@ -18,13 +19,13 @@ class EditEmployeeViewController: UIViewController {
     @IBOutlet weak var tfStreet: UITextField!
     @IBOutlet weak var tfPostalCode: UITextField!
     @IBOutlet weak var btnJob: UIButton!
+    @IBOutlet weak var dpStartDate: UIDatePicker!
+    @IBOutlet weak var isOnApprobation: UISwitch!
     
     private var selectedJob: JobEntity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 
@@ -50,10 +51,14 @@ class EditEmployeeViewController: UIViewController {
         address.postalCode = tfPostalCode.text
         employeeEntity.address = address
         
+        employeeEntity.isOnApprobation = isOnApprobation.isOn
+        employeeEntity.startDate = dpStartDate.date
+        
         employeeEntity.jobId = selectedJob?.id
         
         do {
             try coreDataManager.mainContext?.save()
+            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "EmployeeSaved")))
             closeSelf()
         }
         catch {
