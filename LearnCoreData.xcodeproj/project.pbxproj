@@ -22,6 +22,7 @@
 		525FEDBE252284450065FAC8 /* EmployeeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FEDB8252284450065FAC8 /* EmployeeEntity+CoreDataProperties.swift */; };
 		525FEDBF252284450065FAC8 /* AddressEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FEDB9252284450065FAC8 /* AddressEntity+CoreDataClass.swift */; };
 		525FEDC0252284450065FAC8 /* AddressEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FEDBA252284450065FAC8 /* AddressEntity+CoreDataProperties.swift */; };
+		525FEDC42534ED720065FAC8 /* EmployeeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FEDC32534ED720065FAC8 /* EmployeeInfoViewController.swift */; };
 		527749D825101FB000E7D23C /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527749D725101FB000E7D23C /* EmployeeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		525FEDB8252284450065FAC8 /* EmployeeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		525FEDB9252284450065FAC8 /* AddressEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddressEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		525FEDBA252284450065FAC8 /* AddressEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddressEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		525FEDC32534ED720065FAC8 /* EmployeeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInfoViewController.swift; sourceTree = "<group>"; };
 		527749D725101FB000E7D23C /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 				524FB4402506D4F200245A3A /* AppDelegate.swift */,
 				524FB4422506D4F200245A3A /* SceneDelegate.swift */,
 				524FB4442506D4F200245A3A /* EmployeesViewController.swift */,
+				525FEDC32534ED720065FAC8 /* EmployeeInfoViewController.swift */,
 				527749D725101FB000E7D23C /* EmployeeTableViewCell.swift */,
 				5216EAE525101521002132C3 /* EditEmployeeViewController.swift */,
 				524FB4462506D4F200245A3A /* Main.storyboard */,
@@ -186,6 +189,7 @@
 				524FB4432506D4F200245A3A /* SceneDelegate.swift in Sources */,
 				525FEDBB252284450065FAC8 /* JobEntity+CoreDataClass.swift in Sources */,
 				527749D825101FB000E7D23C /* EmployeeTableViewCell.swift in Sources */,
+				525FEDC42534ED720065FAC8 /* EmployeeInfoViewController.swift in Sources */,
 				525FEDBF252284450065FAC8 /* AddressEntity+CoreDataClass.swift in Sources */,
 				524FB4582506D50F00245A3A /* CoreDataManager.swift in Sources */,
 				524FB44B2506D4F200245A3A /* LearnCoreData.xcdatamodeld in Sources */,

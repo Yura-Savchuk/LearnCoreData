@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y3I-JM-DEM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y3I-JM-DEM">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -10,11 +10,61 @@
         <!--Emloyee Info-->
         <scene sceneID="8bw-vo-65y">
             <objects>
-                <viewController id="1zt-I8-rM5" sceneMemberID="viewController">
+                <viewController id="1zt-I8-rM5" customClass="EmployeeInfoViewController" customModule="LearnCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gk3-gD-8da">
-                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCM-Oh-Xbk">
+                                <rect key="frame" x="0.0" y="50" width="703.5" height="718"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zAe-nX-1n1">
+                                        <rect key="frame" x="20" y="0.0" width="663.5" height="50"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tcs-O9-BkL">
+                                                <rect key="frame" x="0.0" y="0.0" width="663.5" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ФИО" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifX-mL-byZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="200" id="Vks-ro-BI0"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ala-VQ-Tfd">
+                                                        <rect key="frame" x="200" y="0.0" width="463.5" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="3C6-Ku-7b1"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="C6V-UF-F8m" firstAttribute="trailing" secondItem="zAe-nX-1n1" secondAttribute="trailing" constant="20" id="E7b-ie-lfl"/>
+                                    <constraint firstItem="zAe-nX-1n1" firstAttribute="top" secondItem="ddu-th-ebD" secondAttribute="top" id="HPd-L7-FY4"/>
+                                    <constraint firstItem="zAe-nX-1n1" firstAttribute="bottom" secondItem="ddu-th-ebD" secondAttribute="bottom" id="Ypm-cm-fEg"/>
+                                    <constraint firstItem="zAe-nX-1n1" firstAttribute="width" secondItem="ddu-th-ebD" secondAttribute="width" id="ZEv-u0-eon"/>
+                                    <constraint firstItem="zAe-nX-1n1" firstAttribute="leading" secondItem="C6V-UF-F8m" secondAttribute="leading" constant="20" id="lyC-Gv-9Ro"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="ddu-th-ebD"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="C6V-UF-F8m"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XCM-Oh-Xbk" firstAttribute="top" secondItem="Y7a-S4-v7q" secondAttribute="top" id="2Oh-v9-8Tw"/>
+                            <constraint firstItem="XCM-Oh-Xbk" firstAttribute="leading" secondItem="Y7a-S4-v7q" secondAttribute="leading" id="FGM-VI-MWk"/>
+                            <constraint firstItem="Y7a-S4-v7q" firstAttribute="trailing" secondItem="XCM-Oh-Xbk" secondAttribute="trailing" id="rpL-b4-qhg"/>
+                            <constraint firstItem="Y7a-S4-v7q" firstAttribute="bottom" secondItem="XCM-Oh-Xbk" secondAttribute="bottom" id="yR2-nu-idV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Y7a-S4-v7q"/>
                     </view>
                     <navigationItem key="navigationItem" title="Emloyee Info" id="IRQ-d1-x7E">
@@ -24,6 +74,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lblFullName" destination="ala-VQ-Tfd" id="5aW-c2-iuf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TtT-ra-d1u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,7 +166,7 @@
             <objects>
                 <viewController id="EDD-vM-AFL" customClass="EditEmployeeViewController" customModule="LearnCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Z5-26-H5k">
-                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVX-RH-vbd">

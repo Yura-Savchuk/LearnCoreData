@@ -56,5 +56,10 @@ class EmployeesViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedEmployee = employees[indexPath.row]
+        NotificationCenter.default.post(name: Notification.Name("DidSelectEmployee"), object: nil, userInfo: ["employee": selectedEmployee])
+    }
+    
 }
 

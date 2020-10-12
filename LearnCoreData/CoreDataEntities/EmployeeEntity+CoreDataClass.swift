@@ -12,5 +12,11 @@ import CoreData
 
 @objc(EmployeeEntity)
 public class EmployeeEntity: NSManagedObject {
+    
+    func fullName() -> String {
+        return [firstName, middleName, lastName]
+            .compactMap { $0 }
+            .joined(separator: " ")
+    }
 
 }
