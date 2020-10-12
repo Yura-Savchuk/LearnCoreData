@@ -32,6 +32,17 @@ class EmployeesViewController: UITableViewController {
     
     private func fetchAllEmployees() -> [EmployeeEntity] {
         let request: NSFetchRequest<EmployeeEntity> = EmployeeEntity.fetchRequest()
+        
+//        request.predicate = NSPredicate(format: "firstName == %@", "Oleg")
+//        request.predicate = NSPredicate(format: "age > %i", 20)
+//        request.predicate = NSPredicate(format: "firstName ==[c] %@", "oleG")
+//        request.predicate = NSPredicate(format: "firstName == %@ OR age >= %i", "Oleg", 30)
+//        request.predicate = NSPredicate(format: "isOnApprobation == %@ AND age < %i", NSNumber(value: false), 30)
+//        request.predicate = NSPredicate(format: "isOnApprobation == %@ OR firstName == %@", NSNumber(value: false), "Oleg")
+//        request.predicate = NSPredicate(format: "firstName BEGINSWITH[c] %@", "s")
+//        request.predicate = NSPredicate(format: "lastName ENDSWITH %@", "a")
+//        request.predicate = NSPredicate(format: "middleName CONTAINS[c] %@", "e"
+        
         do {
             return try coreDataManager.mainContext?.fetch(request) ?? []
         }
