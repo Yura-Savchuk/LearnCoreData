@@ -18,7 +18,16 @@ class EmployeesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         employees = fetchAllEmployees()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView), name: Notification.Name("EmployeeSaved"), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        NotificationCenter.default.removeObserver(self)
     }
     
     private func fetchAllEmployees() -> [EmployeeEntity] {
@@ -46,6 +55,6 @@ class EmployeesViewController: UITableViewController {
         cell.populate(employees[indexPath.row])
         return cell
     }
-
+    
 }
 
