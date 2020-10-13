@@ -13,6 +13,10 @@ class EmployeeInfoViewController: UIViewController {
 
     @IBOutlet weak var lblFullName: UILabel!
     
+    private var employee: EmployeeEntity?
+    
+    private let coreDataManager = CoreDataManager(modelName: "LearnCoreData")
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(didSelectEmployee(_:)), name: Notification.Name("DidSelectEmployee"), object: nil)
@@ -24,10 +28,13 @@ class EmployeeInfoViewController: UIViewController {
     }
     
     @objc private func didSelectEmployee(_ notification: NSNotification) {
-        guard let employee = notification.userInfo?["employee"] as? EmployeeEntity else {
-            return
-        }
-        lblFullName.text = employee.fullName()
+        self.employee = notification.userInfo?["employee"] as? EmployeeEntity
+        lblFullName.text = self.employee?.fullName() ?? ""
     }
 
+    @IBAction func didSameDayNewsMembersButton(_ sender: Any) {
+        let employees = self.employee?.value(forKey: "sameDateNewsmembers") as? [EmployeeEntity] ?? []
+        
+        print(employees.map {$0.fullName()})
+    }
 }

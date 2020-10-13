@@ -46,6 +46,14 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cp6-sT-Rgo">
+                                        <rect key="frame" x="20" y="652" width="176" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Same day news members"/>
+                                        <connections>
+                                            <action selector="didSameDayNewsMembersButton:" destination="1zt-I8-rM5" eventType="touchUpInside" id="tgg-Yo-cga"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="C6V-UF-F8m" firstAttribute="trailing" secondItem="zAe-nX-1n1" secondAttribute="trailing" constant="20" id="E7b-ie-lfl"/>

@@ -17,6 +17,7 @@ extension EmployeeEntity {
         return NSFetchRequest<EmployeeEntity>(entityName: "Employee")
     }
 
+    @NSManaged public var id: Int16
     @NSManaged public var age: Int16
     @NSManaged public var firstName: String?
     @NSManaged public var isOnApprobation: Bool

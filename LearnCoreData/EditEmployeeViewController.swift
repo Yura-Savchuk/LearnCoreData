@@ -40,6 +40,7 @@ class EditEmployeeViewController: UIViewController {
     @IBAction func didTapSave(_ sender: Any) {
         let coreDataManager = CoreDataManager(modelName: "LearnCoreData")
         let employeeEntity = EmployeeEntity(context: coreDataManager.mainContext!)
+        employeeEntity.id = Int16.random(in: 0..<Int16.max)
         employeeEntity.firstName = tfFirstName.text
         employeeEntity.lastName = tfLastName.text
         employeeEntity.middleName = tfMiddleName.text
