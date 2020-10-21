@@ -10,9 +10,13 @@ import CoreData
 
 class CoreDataManager {
     
+    static var shared: CoreDataManager = {
+        return CoreDataManager(modelName: "LearnCoreData")
+    }()
+    
     private let modelName: String
     
-    init(modelName: String) {
+    private init(modelName: String) {
         self.modelName = modelName
     }
     

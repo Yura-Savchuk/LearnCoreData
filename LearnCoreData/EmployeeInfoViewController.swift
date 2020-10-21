@@ -15,8 +15,6 @@ class EmployeeInfoViewController: UIViewController {
     
     private var employee: EmployeeEntity?
     
-    private let coreDataManager = CoreDataManager(modelName: "LearnCoreData")
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(didSelectEmployee(_:)), name: Notification.Name("DidSelectEmployee"), object: nil)
@@ -25,6 +23,13 @@ class EmployeeInfoViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editEmployee" {
+            let editVC = segue.destination as? EditEmployeeViewController
+            editVC?.editableEmployeeId = employee?.id
+        }
     }
     
     @objc private func didSelectEmployee(_ notification: NSNotification) {

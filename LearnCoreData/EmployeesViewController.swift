@@ -13,7 +13,6 @@ import NotificationCenter
 class EmployeesViewController: UITableViewController {
     
     private var employees: [EmployeeEntity] = []
-    private let coreDataManager = CoreDataManager(modelName: "LearnCoreData")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +32,7 @@ class EmployeesViewController: UITableViewController {
     private func fetchAllEmployees() -> [EmployeeEntity] {
         let request: NSFetchRequest<EmployeeEntity> = EmployeeEntity.fetchRequest()
         do {
-            return try coreDataManager.mainContext?.fetch(request) ?? []
+            return try CoreDataManager.shared.mainContext?.fetch(request) ?? []
         }
         catch {
             print("Fetch employees error \(error.localizedDescription)")

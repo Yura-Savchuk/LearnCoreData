@@ -12,7 +12,7 @@
             <objects>
                 <viewController id="1zt-I8-rM5" customClass="EmployeeInfoViewController" customModule="LearnCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gk3-gD-8da">
-                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCM-Oh-Xbk">
@@ -76,11 +76,18 @@
                         <viewLayoutGuide key="safeArea" id="Y7a-S4-v7q"/>
                     </view>
                     <navigationItem key="navigationItem" title="Emloyee Info" id="IRQ-d1-x7E">
-                        <barButtonItem key="rightBarButtonItem" title="New employee" id="b54-vh-0U9">
-                            <connections>
-                                <segue destination="EDD-vM-AFL" kind="show" id="jY2-47-Yr5"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="New employee" id="b54-vh-0U9">
+                                <connections>
+                                    <segue destination="EDD-vM-AFL" kind="show" identifier="newEmployee" id="jY2-47-Yr5"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Edit" id="yZl-tL-4xI">
+                                <connections>
+                                    <segue destination="EDD-vM-AFL" kind="show" identifier="editEmployee" id="ARH-po-fAG"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="lblFullName" destination="ala-VQ-Tfd" id="5aW-c2-iuf"/>
@@ -174,7 +181,7 @@
             <objects>
                 <viewController id="EDD-vM-AFL" customClass="EditEmployeeViewController" customModule="LearnCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Z5-26-H5k">
-                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVX-RH-vbd">
@@ -379,6 +386,9 @@
             <point key="canvasLocation" x="-223.24218749999997" y="850.78125"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ARH-po-fAG"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
     </resources>

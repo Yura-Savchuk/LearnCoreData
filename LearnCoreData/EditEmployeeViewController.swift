@@ -8,8 +8,12 @@
 
 import UIKit
 import NotificationCenter
+import CoreData
 
 class EditEmployeeViewController: UIViewController {
+    
+    var editableEmployeeId: Int16?
+    private var editableEmployee: EmployeeEntity?
 
     @IBOutlet weak var tfFirstName: UITextField!
     @IBOutlet weak var tfLastName: UITextField!
@@ -26,9 +30,35 @@ class EditEmployeeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchEditableEmployeeIfNeed()
+        prefillWithEditableEmployeeIfExisted()
     }
     
-
+    private func fetchEditableEmployeeIfNeed() {
+        if let editableEmployeeId = editableEmployeeId {
+            let fetchRequest: NSFetchRequest<EmployeeEntity> = EmployeeEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == \(editableEmployeeId)")
+            do {
+                editableEmployee = try CoreDataManager.shared.mainContext?.fetch(fetchRequest).first
+            } catch {
+                print("Error happend: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func prefillWithEditableEmployeeIfExisted() {
+        if let editableEmployee = editableEmployee {
+            prefill(with: editableEmployee)
+        }
+    }
+    
+    private func prefill(with employee: EmployeeEntity) {
+        tfFirstName.text = employee.firstName
+        tfLastName.text = employee.lastName
+        tfMiddleName.text = employee.middleName
+    }
+    
     @IBAction func didTapBack(_ sender: Any) {
         closeSelf()
     }
@@ -37,16 +67,16 @@ class EditEmployeeViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    
     @IBAction func didTapSave(_ sender: Any) {
-        let coreDataManager = CoreDataManager(modelName: "LearnCoreData")
-        let employeeEntity = EmployeeEntity(context: coreDataManager.mainContext!)
+        let employeeEntity = editableEmployee ?? EmployeeEntity(context: CoreDataManager.shared.mainContext!)        
         employeeEntity.id = Int16.random(in: 0..<Int16.max)
         employeeEntity.firstName = tfFirstName.text
         employeeEntity.lastName = tfLastName.text
         employeeEntity.middleName = tfMiddleName.text
         employeeEntity.age = Int16(tfAge.text ?? "") ?? 0
         
-        let address = AddressEntity(context: coreDataManager.mainContext!)
+        let address = AddressEntity(context: CoreDataManager.shared.mainContext!)
         address.city = tfCity.text
         address.street = tfStreet.text
         address.postalCode = tfPostalCode.text
@@ -58,7 +88,7 @@ class EditEmployeeViewController: UIViewController {
         employeeEntity.jobId = selectedJob?.id
         
         do {
-            try coreDataManager.mainContext?.save()
+            try CoreDataManager.shared.mainContext?.save()
             NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "EmployeeSaved")))
             closeSelf()
         }
