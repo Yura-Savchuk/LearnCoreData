@@ -10,7 +10,6 @@ import UIKit
 
 class EmployeeInfoViewController: UIViewController {
     
-
     @IBOutlet weak var lblFullName: UILabel!
     
     private var employee: EmployeeEntity?
@@ -42,4 +41,5 @@ class EmployeeInfoViewController: UIViewController {
         
         print(employees.map {$0.fullName()})
     }
+    
 }

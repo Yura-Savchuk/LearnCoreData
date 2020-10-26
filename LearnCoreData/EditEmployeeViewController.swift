@@ -57,6 +57,13 @@ class EditEmployeeViewController: UIViewController {
         tfFirstName.text = employee.firstName
         tfLastName.text = employee.lastName
         tfMiddleName.text = employee.middleName
+        tfAge.text = String(employee.age)
+        tfCity.text = employee.address?.city
+        tfStreet.text = employee.address?.street
+        tfPostalCode.text = employee.address?.postalCode
+        isOnApprobation.isOn = employee.isOnApprobation
+        if let startDate = employee.startDate { dpStartDate.date = startDate
+        }
     }
     
     @IBAction func didTapBack(_ sender: Any) {
@@ -66,7 +73,6 @@ class EditEmployeeViewController: UIViewController {
     private func closeSelf() {
         navigationController?.popViewController(animated: true)
     }
-    
     
     @IBAction func didTapSave(_ sender: Any) {
         let employeeEntity = editableEmployee ?? EmployeeEntity(context: CoreDataManager.shared.mainContext!)        

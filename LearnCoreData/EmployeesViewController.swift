@@ -60,5 +60,19 @@ class EmployeesViewController: UITableViewController {
         NotificationCenter.default.post(name: Notification.Name("DidSelectEmployee"), object: nil, userInfo: ["employee": selectedEmployee])
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let employee = employees[indexPath.row]
+            CoreDataManager.shared.mainContext?.delete(employee)
+            employees.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            do {
+                try CoreDataManager.shared.mainContext?.save()
+            }
+            catch {
+                print("Error saving managed object context.")
+            }
+        }
+    }
+    
 }
-
