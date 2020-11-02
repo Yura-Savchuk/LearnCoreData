@@ -72,6 +72,37 @@
 			path = CoreDataEntities;
 			sourceTree = "<group>";
 		};
+		522E05972550975D00A2F683 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				524FB4462506D4F200245A3A /* Main.storyboard */,
+				524FB4442506D4F200245A3A /* EmployeesViewController.swift */,
+				525FEDC32534ED720065FAC8 /* EmployeeInfoViewController.swift */,
+				527749D725101FB000E7D23C /* EmployeeTableViewCell.swift */,
+				5216EAE525101521002132C3 /* EditEmployeeViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		522E05982550976D00A2F683 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				524FB44C2506D4F500245A3A /* Assets.xcassets */,
+				524FB44E2506D4F500245A3A /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		522E05992550979900A2F683 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				5216EAE7251019D1002132C3 /* CoreDataEntities */,
+				524FB4492506D4F200245A3A /* LearnCoreData.xcdatamodeld */,
+				524FB4572506D50F00245A3A /* CoreDataManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		524FB4342506D4F200245A3A = {
 			isa = PBXGroup;
 			children = (
@@ -91,19 +122,12 @@
 		524FB43F2506D4F200245A3A /* LearnCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				522E05972550975D00A2F683 /* Screens */,
+				522E05982550976D00A2F683 /* Resources */,
+				522E05992550979900A2F683 /* Database */,
 				524FB4402506D4F200245A3A /* AppDelegate.swift */,
 				524FB4422506D4F200245A3A /* SceneDelegate.swift */,
-				524FB4442506D4F200245A3A /* EmployeesViewController.swift */,
-				525FEDC32534ED720065FAC8 /* EmployeeInfoViewController.swift */,
-				527749D725101FB000E7D23C /* EmployeeTableViewCell.swift */,
-				5216EAE525101521002132C3 /* EditEmployeeViewController.swift */,
-				524FB4462506D4F200245A3A /* Main.storyboard */,
-				524FB44C2506D4F500245A3A /* Assets.xcassets */,
-				524FB44E2506D4F500245A3A /* LaunchScreen.storyboard */,
 				524FB4512506D4F500245A3A /* Info.plist */,
-				524FB4492506D4F200245A3A /* LearnCoreData.xcdatamodeld */,
-				524FB4572506D50F00245A3A /* CoreDataManager.swift */,
-				5216EAE7251019D1002132C3 /* CoreDataEntities */,
 			);
 			path = LearnCoreData;
 			sourceTree = "<group>";
