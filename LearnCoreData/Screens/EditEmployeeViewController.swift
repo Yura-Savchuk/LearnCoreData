@@ -10,6 +10,16 @@ import UIKit
 import NotificationCenter
 import CoreData
 
+fileprivate struct _Constants {
+    
+    static let positions = ["Project Manager",
+                            "Developer",
+                            "QA Engineer",
+                            "Designer"]
+    static let positionPlaceholder = "Выберите позицию"
+    
+}
+
 class EditEmployeeViewController: UIViewController {
     
     var editableEmployeeId: Int16?
@@ -22,11 +32,15 @@ class EditEmployeeViewController: UIViewController {
     @IBOutlet weak var tfCity: UITextField!
     @IBOutlet weak var tfStreet: UITextField!
     @IBOutlet weak var tfPostalCode: UITextField!
-    @IBOutlet weak var btnJob: UIButton!
+    @IBOutlet weak var btnPosition: UIButton!
     @IBOutlet weak var dpStartDate: UIDatePicker!
     @IBOutlet weak var isOnApprobation: UISwitch!
     
-    private var selectedJob: JobEntity?
+    private var selectedPosition: String? {
+        didSet {
+            didSetSelectedPosition()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,9 +75,15 @@ class EditEmployeeViewController: UIViewController {
         tfCity.text = employee.address?.city
         tfStreet.text = employee.address?.street
         tfPostalCode.text = employee.address?.postalCode
+        selectedPosition = employee.position
         isOnApprobation.isOn = employee.isOnApprobation
-        if let startDate = employee.startDate { dpStartDate.date = startDate
+        if let startDate = employee.startDate {
+            dpStartDate.date = startDate
         }
+    }
+    
+    private func didSetSelectedPosition() {
+        btnPosition.setTitle(selectedPosition ?? _Constants.positionPlaceholder, for: .normal)
     }
     
     @IBAction func didTapBack(_ sender: Any) {
@@ -91,7 +111,7 @@ class EditEmployeeViewController: UIViewController {
         employeeEntity.isOnApprobation = isOnApprobation.isOn
         employeeEntity.startDate = dpStartDate.date
         
-        employeeEntity.jobId = selectedJob?.id
+        employeeEntity.position = selectedPosition
         
         do {
             try CoreDataManager.shared.mainContext?.save()
@@ -103,8 +123,19 @@ class EditEmployeeViewController: UIViewController {
         }
     }
     
-    @IBAction func didTapJobButton(_ sender: Any) {
+    @IBAction func didTapPositionButton(_ sender: Any) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        for position in _Constants.positions {
+            alert.addAction(UIAlertAction(title: position, style: .default, handler: { [weak self] _ in
+                self?.selectedPosition = position
+            }))
+        }
         
+        let presentationController = alert.popoverPresentationController
+        presentationController?.sourceView = btnPosition
+        presentationController?.sourceRect = btnPosition.bounds
+        
+        present(alert, animated: true, completion: nil)
     }
     
 }

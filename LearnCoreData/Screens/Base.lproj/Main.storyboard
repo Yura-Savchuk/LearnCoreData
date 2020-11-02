@@ -181,7 +181,7 @@
             <objects>
                 <viewController id="EDD-vM-AFL" customClass="EditEmployeeViewController" customModule="LearnCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Z5-26-H5k">
-                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVX-RH-vbd">
@@ -261,7 +261,7 @@
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="didTapJobButton:" destination="EDD-vM-AFL" eventType="touchUpInside" id="d3U-Wc-VDy"/>
+                                                    <action selector="didTapPositionButton:" destination="EDD-vM-AFL" eventType="touchUpInside" id="pT8-Uz-0sP"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -322,7 +322,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="btnJob" destination="WAy-KJ-aZl" id="ojM-Rf-Q54"/>
+                        <outlet property="btnPosition" destination="WAy-KJ-aZl" id="kjW-FG-H3a"/>
                         <outlet property="dpStartDate" destination="3Pr-bG-XPQ" id="KBV-pM-d0A"/>
                         <outlet property="isOnApprobation" destination="b2q-w5-8y0" id="j5G-pN-OR4"/>
                         <outlet property="tfAge" destination="QId-QL-JuL" id="aPe-gS-h66"/>

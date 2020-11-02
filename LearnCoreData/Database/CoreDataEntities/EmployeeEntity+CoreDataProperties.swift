@@ -21,7 +21,7 @@ extension EmployeeEntity {
     @NSManaged public var age: Int16
     @NSManaged public var firstName: String?
     @NSManaged public var isOnApprobation: Bool
-    @NSManaged public var jobId: String?
+    @NSManaged public var position: String?
     @NSManaged public var lastName: String?
     @NSManaged public var middleName: String?
     @NSManaged public var startDate: Date?
